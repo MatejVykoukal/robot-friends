@@ -1,0 +1,29 @@
+.robot-card {
+	background: #2f3035;
+	color: #afb0b4;
+	border-radius: 8px;
+	transition: transform 100ms ease-in-out;
+	cursor: pointer;
+
+	max-width: 400px;
+	width: 100%;
+	min-height: 500px;
+	padding: 24px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.robot-card:hover {
+	transform: scale(1.05);
+}
+
+.robot-card__image {
+	object-fit: cover;
+	max-width: 100%;
+}
+
+.robot-card__name {
+	text-transform: capitalize;
+}
