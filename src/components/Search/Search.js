@@ -5,6 +5,12 @@ import RobotCard from '../RobotCard';
 const Search = ({ robotsData }) => {
 	const [searchQuery, setSearchQuery] = useState('');
 
+	/**
+	 * @function
+	 * Filters and returns robots, that includes filter parameter in their name.
+	 * @param {string} filter
+	 * @returns {object[]} Filtered array of robots
+	 */
 	const filteredRobots = (filter) => {
 		return robotsData.filter((robot) =>
 			robot.name.toLowerCase().includes(filter.toLowerCase())

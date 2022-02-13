@@ -6,7 +6,17 @@ import './App.css';
 function App() {
 	const [loadMoreCount, setLoadMoreCount] = useState(1);
 	const [loading, setLoading] = useState(false);
+
 	const [robotsData, setRobotsData] = useState([]);
+
+	class Robot {
+		constructor({ name, image, description, id }) {
+			this.name = name;
+			this.image = image;
+			this.description = description;
+			this.id = id;
+		}
+	}
 
 	const getNewData = async () => {
 		setLoading(true);
@@ -17,12 +27,15 @@ function App() {
 		);
 		const data = await response.json();
 
-		const newRobots = data.map((post) => ({
-			name: shortenString(post.title, 10, false),
-			image: `https://robohash.org/${post.id}`,
-			description: post.body,
-			id: post.id,
-		}));
+		const newRobots = data.map(
+			(post) =>
+				new Robot({
+					name: shortenString(post.title, 10, false),
+					image: `https://robohash.org/${post.id}`,
+					description: post.body,
+					id: post.id,
+				})
+		);
 
 		// Fake response timeout
 		setTimeout(() => {
