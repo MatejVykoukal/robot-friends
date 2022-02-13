@@ -3,22 +3,22 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 24px;
+	padding: var(--spacer-6);
 }
 
 .loading {
-	font-size: 1.4rem;
-	color: #fff;
-	visibility: hidden;
 	position: fixed;
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #00000088;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	font-size: 1.4rem;
+	visibility: hidden;
+	background-color: var(--color-mask-overlay);
 }
 
 .visible {
@@ -28,31 +28,34 @@
 button {
 	width: 100%;
 	max-width: 400px;
-	border-radius: 8px;
-	background: linear-gradient(to bottom right, #38ef7d, #11998e);
+	padding: var(--spacer-2) var(--spacer-6);
+
+	background: linear-gradient(
+		to bottom right,
+		var(--color-primary-gradient-left),
+		var(--color-primary-gradient-right)
+	);
+	color: var(--color-secondary-text);
+	border-radius: var(--spacer-2);
 	border-style: none;
-	color: #fff;
-	cursor: pointer;
 	font-weight: 700;
 	font-size: 1rem;
 	line-height: 1.5;
-	padding: 8px 24px;
 	text-transform: none;
-}
-
-button[disabled] {
-	opacity: 0.5;
-	cursor: not-allowed;
+	cursor: pointer;
 }
 
 .component {
-	margin-top: 24px;
+	margin-top: var(--spacer-6);
 }
 
 .uppercase {
 	text-transform: uppercase;
 	letter-spacing: 0.5rem;
-	background: -webkit-linear-gradient(#11998e, #38ef7d);
+	background: -webkit-linear-gradient(
+		var(--color-primary-gradient-right),
+		var(--color-primary-gradient-left)
+	);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -63,15 +66,17 @@ button[disabled] {
 	width: 80px;
 	height: 80px;
 }
+
 .lds-dual-ring:after {
 	content: ' ';
 	display: block;
 	width: 64px;
 	height: 64px;
-	margin: 8px;
+	margin: var(--spacer-2);
 	border-radius: 50%;
 	border: 6px solid currentColor;
-	border-color: #11998e transparent #38ef7d transparent;
+	border-color: var(--color-primary-gradient-right) transparent
+		var(--color-primary-gradient-left) transparent;
 	animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -80,72 +85,5 @@ button[disabled] {
 	}
 	100% {
 		transform: rotate(360deg);
-	}
-}
-
-.glow-on-hover {
-	border: none;
-	outline: none;
-	cursor: pointer;
-	position: relative;
-	z-index: 1;
-	border-radius: 10px;
-}
-
-.glow-on-hover:before {
-	content: '';
-	background: linear-gradient(
-		85deg,
-		#006d88,
-		#0094a2,
-		#00bb9b,
-		#00bb9b,
-		#0094a2,
-		#006d88
-	);
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-size: 400%;
-	z-index: -1;
-	filter: blur(5px);
-	width: calc(101% + 0px);
-	height: calc(95% + 0px);
-	animation: glowing 20s linear infinite;
-	opacity: 0;
-	transition: opacity 0.3s ease-in-out;
-	border-radius: 10px;
-}
-
-.glow-on-hover:active:after {
-	background: transparent;
-}
-
-.glow-on-hover:hover:before {
-	opacity: 1;
-}
-
-.glow-on-hover:after {
-	z-index: -1;
-	content: '';
-	position: absolute;
-	background: #2f3035;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	border-radius: 10px;
-}
-
-@keyframes glowing {
-	0% {
-		background-position: 0 0;
-	}
-	50% {
-		background-position: 400% 0;
-	}
-	100% {
-		background-position: 0 0;
 	}
 }

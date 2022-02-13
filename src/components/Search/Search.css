@@ -20,7 +20,7 @@
 	border-bottom: 2px solid #9b9b9b;
 	outline: 0;
 	font-size: 1.3rem;
-	color: #fff;
+	color: var(--color-secondary-text);
 	padding: 7px 0;
 	background: transparent;
 	transition: border-color 0.2s;
@@ -33,7 +33,7 @@
 .search__bar__input:placeholder-shown ~ .search__bar__label {
 	font-size: 1.3rem;
 	cursor: text;
-	top: 20px;
+	top: var(--spacer-5);
 }
 
 .search__bar__label {
@@ -49,7 +49,11 @@
 	padding-bottom: 6px;
 	font-weight: 700;
 	border-width: 3px;
-	border-image: linear-gradient(to right, #11998e, #38ef7d);
+	border-image: linear-gradient(
+		to right,
+		var(--color-primary-gradient-right),
+		var(--color-primary-gradient-left)
+	);
 	border-image-slice: 1;
 }
 
@@ -59,7 +63,7 @@
 	display: block;
 	transition: 0.2s;
 	font-size: 1rem;
-	color: #11998e;
+	color: var(--color-primary-gradient-right);
 	font-weight: 700;
 }
 

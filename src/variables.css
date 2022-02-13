@@ -1,0 +1,18 @@
+:root {
+	/* Colors */
+	--color-primary-gradient-left: #38ef7d;
+	--color-primary-gradient-right: #11998e;
+	--color-primary-text: #afb0b4;
+	--color-secondary-text: #fff;
+	--primary-background: #222222;
+	--secondary-background: #2f3035;
+	--color-mask-overlay: #00000088;
+
+	/* Spacers */
+	--spacer-1: 4px;
+	--spacer-2: 8px;
+	--spacer-3: 12px;
+	--spacer-4: 16px;
+	--spacer-5: 20px;
+	--spacer-6: 24px;
+}
