@@ -18,7 +18,7 @@ function App() {
 		}
 	}
 
-	const getNewData = async () => {
+	const setNewRobotsData = async () => {
 		setLoading(true);
 
 		// Returns array with 10 posts
@@ -47,7 +47,7 @@ function App() {
 	};
 
 	useEffect(() => {
-		getNewData();
+		setNewRobotsData();
 	}, []);
 
 	return (
@@ -57,7 +57,11 @@ function App() {
 			<Search robotsData={robotsData} />
 
 			{loadMoreCount <= 10 && Boolean(robotsData.length) && (
-				<button className="component" disable={loading} onClick={getNewData}>
+				<button
+					className="component"
+					disable={loading}
+					onClick={setNewRobotsData}
+				>
 					Load more
 				</button>
 			)}
